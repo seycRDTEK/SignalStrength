@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+	id="cordova-plugin-signal-strength"
+	version="0.6.1">
+
+	<name>SignalStrength</name>
+	<description>Signal Strength Plugin</description>
+	<license>EYC</license>
+	<keywords>signal</keywords>
+
+	<js-module src="www/signalStrength.js">
+		<clobbers target="plugins.signalStrength" />
+	</js-module>
+
+
+	<!-- android -->
+	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="SignalStrength" >
+				<param name="android-package" value="com.eyc.plugins.SignalStrength"/>
+			</feature>
+		</config-file>
+
+		<source-file src="src/android/SignalStrength.java" target-dir="src/com/eyc/plugins/SignalStrength" />
+	</platform>
+</plugin>
